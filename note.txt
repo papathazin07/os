@@ -1,0 +1,14 @@
+Item Manage
+ --------
+ 	-create resource route
+ 	-create controller (--resource) at git
+ 	-show route list (php artisan route:list)
+ 	-create blade (4 for get methods)
+ 	-call specified view from method
+ 	-use store method (form action)
+ 	 -add()
+ 	 -validation
+ 	 -if include image, uplode 
+ 	 -data insert 
+ 	 -redirect -> (index)
+ 	-show in database
