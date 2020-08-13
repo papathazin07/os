@@ -16,7 +16,9 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return view('backend.items.index');
+        $items = Item::all();
+        // dd($items);
+        return view('backend.items.index',compact('items'));
     }
 
     /**
@@ -82,7 +84,9 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        return view('backend.items.show');
+        $item = Item::find($id);
+        // dd($item);
+        return view('backend.items.show',compact('item'));
     }
 
     /**
@@ -93,7 +97,10 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        return view('backend.items.edit');
+        $brands = Brand::all();
+        $subcategories = Subcategory::all();
+        $item = Item::find($id);
+        return view('backend.items.edit',compact('brands','subcategories','item'));
     }
 
     /**
@@ -105,7 +112,49 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+
+        //validation
+        $request->validate([
+            'codeno'=>'required|min:4',
+            'name'=>'required',
+            'price'=>'required',
+            'photo'=>'sometimes',
+            'discount'=>'required',
+            'item_des'=>'required',
+            'brand'=>'required',
+            'subcategory'=>'required'
+        ]); 
+
+        //if include file, uplode
+        if($request->hasFile('photo')){
+
+        $imageName = time().'.'.$request->photo->extension();
+        $request->photo->move(public_path('backend/itemimg'),$imageName);
+        $myfile = 'backend/itemimg/'.$imageName;
+        //delete old photo (unlink)
+        // $oldphoto = $request->oldphoto;
+        // unlink($oldphoto);
+    }else{
+        $myfile = $request->oldphoto;
+
+    }
+
+        //data update
+        $item = Item::find($id);
+        $item->codeno = $request->codeno;
+        $item->name = $request->name;
+        $item->photo = $myfile;
+        $item->price = $request->price;
+        $item->discount = $request->discount;
+        $item->description = $request->item_des;
+        $item->brand_id = $request->brand;
+        $item->subcategory_id = $request->subcategory;
+        $item->save();
+
+
+        //redirect
+        return redirect()->route('items.index');
     }
 
     /**
@@ -116,6 +165,10 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = Item::find($id);
+        $item->delete();
+
+        //redirect
+        return redirect()->route('items.index');
     }
 }
