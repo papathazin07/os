@@ -9,6 +9,11 @@ use App\Subcategory;
 
 class ItemController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');  //if login, show ui to user
+    }
+
     /**
      * Display a listing of the resource.
      *

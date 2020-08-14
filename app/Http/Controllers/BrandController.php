@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Brand;
 class BrandController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');  //if login, show ui to user
+    }
     /**
      * Display a listing of the resource.
      *
@@ -130,5 +134,6 @@ class BrandController extends Controller
     {
         $brand = Brand::find($id);
         $brand->delete();
+        return redirect()->route('brands.index');
     }
 }

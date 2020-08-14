@@ -44,8 +44,8 @@
 					<p class="card-text">{{$item->description}}</p>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="btn btn-info btn-sm">Add to Cart</a>
-					<a href="{{route('itemdetail',$item->id)}}" class="btn btn-primary btn-sm float-right">Detail</a>
+					<a href="#" class="btn btn-info btn-sm order" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{asset($item->photo)}}" data-price="{{$item->price}}" data-discount="{{$item->discount}}" data-brandname="{{$item->brand_id}}" data-subcategory="{{$item->subcategory_id}}" data-description="{{$item->description}}">Add to Cart</a>
+					<a href="{{route('itemdetail',$item->id)}}" class="btn btn-primary btn-sm float-right order" >Detail</a>
 				</div>
 			</div>
 		</div>
@@ -58,4 +58,7 @@
 </div>
 <!-- /.col-lg-9 -->
 
+@endsection
+@section('script')
+	<script type="text/javascript" src="frontend/js/script.js"></script>
 @endsection
