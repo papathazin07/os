@@ -133,8 +133,8 @@ class ItemController extends Controller
         $request->photo->move(public_path('backend/itemimg'),$imageName);
         $myfile = 'backend/itemimg/'.$imageName;
         //delete old photo (unlink)
-        // $oldphoto = $request->oldphoto;
-        // unlink($oldphoto);
+        $oldphoto = $request->oldphoto;
+        unlink($oldphoto);
     }else{
         $myfile = $request->oldphoto;
 
@@ -168,7 +168,6 @@ class ItemController extends Controller
         $item = Item::find($id);
         $item->delete();
 
-        //redirect
-        return redirect()->route('items.index');
+        
     }
 }

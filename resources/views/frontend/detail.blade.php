@@ -1,8 +1,9 @@
-@extends('backendtemplate')
+@extends('frontendtemplate')
 @section('content')
-	<div class="container-fluid">
-		<h2>Item Details</h2>
-		<div class="card mb-3 border-0" style="max-width: 540px;">
+<div class="col-lg-9">
+	<h2>Item Page Filter By brand and subcategory</h2>
+
+	<div class="card mb-3 border-0" style="max-width: 540px;">
 			<div class="row no-gutters">
 				<div class="col-md-4">
 					<img src="{{asset($item->photo)}}" class="card-img-top w-100" alt="..." >
@@ -46,7 +47,7 @@
 								<p>Product Brand:</p>
 							</div>
 							<div class="col-md-6">
-								<p>{{$item->brand->name}}</p>
+								<p>OIS</p>
 							</div>
 						<hr>
 						
@@ -54,7 +55,7 @@
 								<p>Subcategory:</p>
 							</div>
 							<div class="col-md-6">
-								<p>{{$item->subcategory->name}}</p>
+								<p>Electric Guitar</p>
 							</div>
 						<hr>
 						
@@ -62,12 +63,13 @@
 								<p>Description:</p>
 							</div>
 							<div class="col-md-6">
-								<p>{{$item->description}}</p>
+								<p>{{$item->discount}}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	<!-- /.row -->
+</div>
 @endsection

@@ -19,8 +19,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 
 // });
-Route::get('/','BackendController@dashboard')->name('dashboard');
+Route::get('dashboard','BackendController@dashboard')->name('dashboard');
 Route::resource('items','ItemController'); //7 (get 4,post 1, put 1,delete 1)
 Route::resource('brands','BrandController');
 Route::resource('categories','CategoryController');
 Route::resource('subcategories','SubcategoryController');
+
+Route::get('/','FrontendController@home')->name('home');
+Route::get('itemfilter','FrontendController@itemfilter')->name('itemfilter');
+Route::get('itemdetail/{id}','FrontendController@itemdetail')->name('itemdetail');
+Route::get('checkout','FrontendController@checkout')->name('checkout');
+Route::get('login','FrontendController@login')->name('login');
+Route::get('register','FrontendController@register')->name('register');
+Route::get('profile','FrontendController@profile')->name('profile');
