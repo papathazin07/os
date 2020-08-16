@@ -13,4 +13,7 @@ class Brand extends Model
     public function items($value=''){
     	return $this->hasMany('App\Item');
     }
+    public function categories($value=''){
+    	return $this->hasMany('App\Category');
+    }
 }

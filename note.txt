@@ -19,9 +19,25 @@ Item Manage
 -Validation Error, Delete Image if uplode new image (brand)
 
 -UI
- -Item filering page
- -item detail page
+ -Item filering page 
+ -item detail page 
  -checkout page
- -profile page
- -register page
- -login page
+ -profile page 
+ -register page && login (use auto method)
+
+ 14-08-2020
+  --------
+ -Frontend
+	 -filter item page (data binding)
+	 -profile page (link / retrieve)
+	 -auth (multi role)
+-Backend
+	-Order retrieve
+	-(backend/orders)
+	-create view (index.blade.php)
+	-show table (order list)
+	-OrderController/index
+
+	-RUD(cate && subcategory)
+	-profile link not include retrieve 
+

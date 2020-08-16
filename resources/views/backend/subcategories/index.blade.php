@@ -13,15 +13,18 @@
 				</tr>
 			</thead>
 			<tbody>
+				@foreach($subcategories as $subcategory)
+				@php $i=1; @endphp
 				<tr>
-					<td>1</td>
-					<td>001 <a href="{{route('subcategories.show',1)}}"><span class="badge badge-primary badge-pill"> Detail</span></a></td>
-					<td>Item 1</td>
+					<td>{{$i++}}</td>
+					<td>{{$subcategory->name}} <a href="{{route('subcategories.show',$subcategory->id)}}"><span class="badge badge-primary badge-pill"> Detail</span></a></td>
+					<td>{{$subcategory->category->name}}</td>
 					<td>
-						<a href="{{route('subcategories.edit',1)}}" class="btn btn-warning">Edit</a>
+						<a href="{{route('subcategories.edit',$subcategory->id)}}" class="btn btn-warning">Edit</a>
 						<a href="#" class="btn btn-danger">Delete</a>
 					</td>
 				</tr>
+				@endforeach
 			</tbody>
 		</table>
 	</div>
