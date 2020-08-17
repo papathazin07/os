@@ -8,6 +8,12 @@ use App\Order;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:admin')->except('store');
+        $this->middleware('role:customer')->only('store');  //if login, show ui to user
+    }
+
     /**
      * Display a listing of the resource.
      *

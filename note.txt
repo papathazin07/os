@@ -39,5 +39,11 @@ Item Manage
 	-OrderController/index
 
 	-RUD(cate && subcategory)
-	-profile link not include retrieve 
+	-profile link not include retrieve
+
+-17-08-2020
+ ---------
+ -Frontend
+  -filter item page (data binding)
+  -profile
 

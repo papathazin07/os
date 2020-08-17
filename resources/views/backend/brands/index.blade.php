@@ -18,7 +18,7 @@
 				<tr>
 					<td>{{$i++}}</td>
 					<td>{{$brand->name}}<a href="{{route('brands.show',$brand->id)}}"><span class="badge badge-primary badge-pill"> Detail</span></a></td>
-					<td><img src="{{asset($brand->photo)}}"></td>
+					<td><img src="{{asset($brand->photo)}}" width="100" height="100"></td>
 					<td>
 						<a href="{{route('brands.edit',$brand->id)}}" class="btn btn-warning">Edit</a>
 						<form method="post" action="{{route('brands.destroy',$brand->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">

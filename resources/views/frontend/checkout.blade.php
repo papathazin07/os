@@ -31,7 +31,7 @@
 			<div class="offset-md-2 col-md-4 text-left">
 				<a href="{{route('home')}}" class="btn btn-outline-dark">Continue Shopping</a>
 			</div>
-			@auth
+			@role('customer')
 			<div class="offset-md-2 col-md-4 text-left">
 				<a href="#" class="btn btn-outline-dark buy_now">Buy Now</a>
 			</div>
@@ -39,7 +39,7 @@
 			<div class="offset-md-2 col-md-4 text-left">
 				<a href="{{route('login')}}" class="btn btn-outline-dark">Login to Buy</a>
 			</div>
-			@endauth
+			@endrole
 		</div>
 	</div>
 </div>

@@ -18,7 +18,7 @@
 				<tr>
 					<td>{{$i++}}</td>
 					<td>{{$category->name}} <a href="{{route('categories.show',$category->id)}}"><span class="badge badge-primary badge-pill"> Detail</span></a></td>
-					<td><img src="{{asset($category->photo)}}"></td>
+					<td><img src="{{asset($category->photo)}}" width="100" height="100"></td>
 					<td>
 						<a href="{{route('categories.edit',$category->id)}}" class="btn btn-warning">Edit</a>
 						<form method="post" action="{{route('categories.destroy',$category->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">

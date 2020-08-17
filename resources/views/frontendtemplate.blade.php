@@ -59,7 +59,10 @@
               {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 
+
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{route('profile')}}" ><span class="caret">Profile</span>
+            </a>
               <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
@@ -88,16 +91,7 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
-
-        <h1 class="my-4">Shop Name</h1>
-        <div class="list-group">
-          <a href="{{route('itemfilter')}}" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-        </div>
-
-      </div>
+      @yield('sidebar')
       <!-- /.col-lg-3 -->
 
       @yield('content')

@@ -14,7 +14,7 @@
 			text-align: center;" class="text-center d-inline-block">
 		</div>
 	</div>
-	
+	{{Auth::user()->name}}
 
 </div>
 @endsection

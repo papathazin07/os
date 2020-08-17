@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Brand;
 use App\Subcategory;
+use App\Category;
 
 class ItemController extends Controller
 {
@@ -22,6 +23,7 @@ class ItemController extends Controller
     public function index()
     {
         $items = Item::all();
+        
         // dd($items);
         return view('backend.items.index',compact('items'));
     }
