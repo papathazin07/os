@@ -90,11 +90,11 @@ class SubcategoryController extends Controller
         //validation
         $request->validate([
             'name'=>'required',
-            'category'=>'sometimes'
+            'category'=>'required'
         ]);
 
         //item insert
-        $subcategory = new Subcategory;
+        $subcategory =  Subcategory::find($id);
         $subcategory->name = $request->name;
         $subcategory->category_id = $request->category;
         $subcategory->save();

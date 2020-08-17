@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Order;
+use App\Item;
 
 class OrderController extends Controller
 {
@@ -73,7 +74,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+        $items = Item::all();
+        return view('backend.orders.orderdetail',compact('order','items'));
     }
 
     /**

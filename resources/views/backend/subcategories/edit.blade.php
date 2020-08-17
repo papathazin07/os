@@ -18,17 +18,18 @@
 			<div class="form-group">
 				<label for="name">Name</label>
 				<input type="text" name="name" id="name" class="form-control" value="{{$subcategory->name}}">
+
 			</div>
 			
 			<div class="form-group row">
 				<label>Category:</label>
-				<select class="form-control" name="subcategory">
+				<select class="form-control" name="category">
 					@foreach($categories as $category)
-					<option value="{{$subcategory->id}}"
+					<option value="{{$category->id}}"
 						@if($category->id == $subcategory->category_id)
 							{{'selected'}}
 						@endif
-						>{{$subcategory->name}}</option>
+						>{{$category->name}}</option>
 					@endforeach
 				</select>
 			</div>

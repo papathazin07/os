@@ -20,11 +20,11 @@
 				<tr>
 					<td>{{$i++}}</td>
 					<td>{{$order->voucherno}}</td>
+					<td>{{$order->orderdate}}</td>
 					<td>{{$order->total}}</td>
-					<td>{{$order->note}}</td>
 					<td>
 						<a href="#" class="btn btn-warning">Confirm</a>
-						<a href="#" class="btn btn-danger">Detail</a>
+						<a href="{{route('orders.show',$order->id)}}" class="btn btn-danger">Detail</a>
 					</td>
 				</tr>
 				@endforeach

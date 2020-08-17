@@ -14,7 +14,8 @@
 			text-align: center;" class="text-center d-inline-block">
 		</div>
 	</div>
-	{{Auth::user()->name}}
+	<h6 class="text-center">{{Auth::user()->name}} </h6> 
+	<h6 class="text-center">{{Auth::user()->email}} </h6>
 
 </div>
 @endsection

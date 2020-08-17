@@ -45,5 +45,25 @@ Item Manage
  ---------
  -Frontend
   -filter item page (data binding)
-  -profile
+  -profile page (link/retrieve)
+
+  //Deployment Laravel Project
+  -create subdomain
+  -enter into subdomain using SSH 
+   (ssh -p 7822 username@domain.me)
+  -git clone (git repo url)
+  -enter into folder (cd foldername)
+  -cp .env.example .env
+  -composer install
+  -php artisan key:generate
+
+  In Cpanel
+  -create a database and user
+  -Add user to Database
+
+  -edit (DB)config in .env file
+  -add htaccess file
+  -SSH Terminal
+   -php artisan migrate
+   -php artisan db:seed
 
